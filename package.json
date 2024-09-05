@@ -1,0 +1,21 @@
+{
+  "name": "umschool",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^9.2.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.77.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "swiper": "^11.1.3"
+  }
+}

@@ -1,0 +1,43 @@
+@import "mixins";
+
+html {
+  font-size: 16px;
+
+  &[data-view="students"] {
+    .parents {
+      display: none;
+    }
+  }
+
+  &[data-view="parents"] {
+    .students {
+      display: none;
+    }
+  }
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
+
+body {
+  font-family: 'Onest', sans-serif;
+  background-color: var(--main-bg);
+  padding-top: 1rem;
+  min-height: 100dvh;
+  line-height: 1.4;
+
+  @include tablet {
+    padding-top: 0;
+  }
+}
+
+.container {
+  max-width: 1240px;
+  padding: 0 1.25rem;
+  margin: 0 auto;
+}
+
+.main {
+  padding-top: 2rem;
+}

@@ -1,0 +1,13 @@
+.margin {
+  &-auto {
+    margin: 0 auto;
+  }
+
+  &-left-auto {
+    margin-left: auto;
+  }
+
+  &-right-auto {
+    margin-right: auto;
+  }
+}

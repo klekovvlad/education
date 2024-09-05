@@ -1,0 +1,110 @@
+@import "mixins";
+
+.hero {
+  background-image: url("/src/img/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  position: relative;
+
+  &-subtitle {
+    max-width: min(426px, 100%);
+  }
+
+  &-wrapper {
+    padding-top: 2.25rem;
+
+    @include mobile {
+      padding-top: 2rem;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    color: var(--main-white);
+    font-weight: 700;
+    width: 206px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    @include tablet {
+      width: 180px;
+    }
+
+    @include mobile {
+      position: relative;
+      top: 0;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      width: 100%;
+      background-color: rgba(78, 115, 211, 0.4);
+      animation: pulse 3s ease infinite;
+    }
+
+    &:after {
+      width: 150px;
+      height: 105px;
+      background-image: url("/src/img/hero-img-arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: -25px;
+      right: -60px;
+      translate: 0 -100%;
+
+      @include tablet {
+        top: 0
+      }
+
+      @include mobile {
+        left: 0;
+        top: 0;
+        translate: -100% 0;
+        scale: -1 1;
+        rotate: -30deg;
+      }
+    }
+
+    span {
+      position: relative;
+      width: 74%;
+      z-index: 2;
+      rotate: -19deg;
+      background-color: var(--main-blue);
+      border-radius: 50%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        rotate: 0deg;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1;
+  }
+}

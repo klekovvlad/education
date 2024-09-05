@@ -1,0 +1,21 @@
+.text {
+  &.medium {
+    font-weight: 500;
+  }
+
+  &.secondary {
+    color: var(--text-secondary);
+  }
+
+  &.blue {
+    color: var(--main-blue);
+  }
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}

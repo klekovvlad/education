@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-view="students">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" crossorigin href="src/scss/styles.scss">
+  <title>ЕГЭ Про100</title>
+</head>
+<body>
+
+  <header class="container header">
+    <div class="flex justify-space-between gap-l header-wrapper">
+      <a href="/" class="logo flex-no-shrink">
+        <img src="src/img/logo.svg" alt="ЕГЭ просто логотип">
+      </a>
+      <div class="flex justify-space-between flex-grow gap-l header-menu">
+        <nav class="flex-grow">
+          <ul class="flex justify-space-around header-menu-items">
+            <li><a href="">Преимущества</a></li>
+            <li><a href="">Наши преподаватели</a></li>
+            <li><a href="">Платформа</a></li>
+            <li><a href="">Отзывы</a></li>
+          </ul>
+        </nav>
+        <a class="text medium header-phone" href="tel:+79322131123">+ 7 932-213-11-23</a>
+      </div>
+      <div class="flex justify-end gap-s header-buttons">
+        <button class="button button-default">Войти</button>
+        <button class="button button-secondary">Купить курс</button>
+        <button class="header-menu-button flex direction-column justify-center flex-no-shrink">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero container">
+      <div class="switch flex justify-center margin-auto" data-view="students">
+        <button data-view="students" class="button text medium">Ученики</button>
+        <button data-view="parents" class="button text medium">Родители</button>
+      </div>
+      <div class="hero-wrapper flex direction-column gap-l">
+        <h1>
+          <span class="students">Готовим учеников к <span class="text blue">ЕГЭ 2025</span> для поступления на бюджет</span>
+          <span class="parents">Подготовим вашего ребенка к <span class="text blue">ЕГЭ</span> с <span class="text blue">любого</span> уровня</span>
+        </h1>
+        <p class="hero-subtitle text-align-center">Мы объясним даже самые сложные задания простыми словами. С нами учиться легко!</p>
+        <button class="hero-button flex justify-center text-align-center">
+          <span>Бесплатная консультация</span>
+        </button>
+        <div class="hero-img">
+          <img class="students" src="src/img/hero-img-students.svg" alt="Изображение" />
+          <img class="parents" src="src/img/hero-img-parents.svg" alt="Изображение" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/app.ts"></script>
+</body>
+</html>

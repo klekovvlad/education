@@ -1,0 +1,41 @@
+@import "mixins";
+
+h1, h2 {
+  font-weight: 700;
+  text-wrap: balance;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  text-align: center;
+
+  &.size-42 {
+    font-size: 2.625rem;
+  }
+}
+
+h1 {
+  font-size: 3.5rem;
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2.875rem;
+
+  @include mobile {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 600;
+
+  @include mobile {
+    font-size: 1.375rem;
+  }
+}
