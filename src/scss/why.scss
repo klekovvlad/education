@@ -1,0 +1,102 @@
+@import "mixins";
+
+.why {
+  position: relative;
+  top: -20px;
+
+  @include mobile {
+    top: 0;
+    margin-top: 1rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 19px;
+    right: 19px;
+    bottom: -1px;
+    background-color: var(--line-main-border);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .why-wrapper,
+  &:before {
+    mask: url("/src/img/why-mask.svg") no-repeat top center;
+    mask-size: cover;
+    border-radius: 1rem;
+
+    @include mobile {
+      mask: none;
+    }
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .5rem;
+    background-color: var(--main-white);
+    padding: 5rem 3.75rem 3.75rem;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+      padding: 2rem 1.25rem;
+    }
+  }
+
+  &-list {
+    li {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: var(--other-state-green);
+        margin-right: 0.75rem;
+      }
+    }
+  }
+
+  &-numbers {
+    margin-top: auto;
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
+
+    @include mobile {
+      margin-top: 1.5rem;
+    }
+
+    &-item {
+      gap: 5px;
+
+      @include mobile {
+        flex-basis: calc((100% - 1.5rem) / 2) ;
+      }
+    }
+
+    .why-number {
+      font-size: 2.875rem;
+
+      @include mobile {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+.why {
+  .chat {
+    @media (max-width: 968px) {
+      display: none;
+    }
+  }
+}

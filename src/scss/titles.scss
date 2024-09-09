@@ -11,6 +11,10 @@ h1, h2, h3 {
 
   &.size-42 {
     font-size: 2.625rem;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
 }
 

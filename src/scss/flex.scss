@@ -1,3 +1,5 @@
+@import "mixins";
+
 .flex {
   display: flex;
   align-items: center;
@@ -5,6 +7,14 @@
 
   &.direction-column {
     flex-direction: column;
+  }
+
+  &.gap-xl {
+    gap: 2rem;
+
+    @include mobile {
+      gap: 1.5rem;
+    }
   }
 
   &.gap-l {

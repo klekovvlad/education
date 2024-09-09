@@ -4,10 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.375rem;
-  padding: 0 1.5rem;
+  height: 3.25rem;
+  padding: 0 2.625rem;
   min-width: 106px;
   border-radius: .5rem;
+}
+
+.button-small {
+  height: 2.375rem;
+  padding: 0 1.5rem;
+}
+
+.max-content {
+  max-width: max-content;
 }
 
 .button-default {

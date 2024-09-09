@@ -3,12 +3,20 @@
     font-weight: 500;
   }
 
+  &.semi-bold {
+    font-weight: 600;
+  }
+
   &.secondary {
     color: var(--text-secondary);
   }
 
   &.blue {
     color: var(--main-blue);
+  }
+
+  &.small {
+    font-size: 14px;
   }
 }
 

@@ -40,4 +40,8 @@ body {
 
 .main {
   padding-top: 2rem;
+
+  section:not(:first-child) {
+    margin-bottom: 150px;
+  }
 }
