@@ -5,9 +5,8 @@ export const mobileMenu = () => {
   const button = document.querySelector<HTMLButtonElement>('.header-menu-button');
 
   if (menu && button) {
-    const toggleOpen = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      target.classList.toggle('open');
+    const toggleOpen = () => {
+      button.classList.toggle('open');
 
       if (menu.classList.contains('open')) {
         menu.classList.remove('open');
