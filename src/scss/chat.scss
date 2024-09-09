@@ -15,10 +15,21 @@
   }
 
   &-message {
+    position: relative;
     max-width: max-content;
     padding: 14px 24px;
     border-radius: 6px;
     background-color: var(--main-white);
+
+    &:before {
+      content: attr(data-time);
+      position: absolute;
+      top: -5px;
+      left: 0;
+      translate: 0 -100%;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
   }
 
   &-item__author {
@@ -36,6 +47,10 @@
 
     .chat-message {
       border-bottom-right-radius: 0;
+      &:before {
+        left: 100%;
+        translate: -100% -100%;
+      }
     }
   }
 

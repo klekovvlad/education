@@ -30,3 +30,34 @@
   background-color: var(--main-bg);
   border: 1px solid var(--button-secondary);
 }
+
+.button-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  aspect-ratio: 1;
+  background-color: var(--main-white);
+  border: 1px solid var(--line-main-border);
+  border-radius: 50%;
+
+  svg {
+    position: relative;
+    bottom: 1px;
+    width: 12px;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+}
+
+.slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+
+  .button-circle:first-child {
+    transform: rotate(180deg);
+  }
+}

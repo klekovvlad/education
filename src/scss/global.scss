@@ -43,5 +43,15 @@ body {
 
   section:not(:first-child) {
     margin-bottom: 150px;
+
+    @include mobile {
+      margin-bottom: 80px;
+    }
   }
+}
+
+svg {
+  max-width: 2rem;
+  aspect-ratio: 1;
+  object-fit: contain;
 }

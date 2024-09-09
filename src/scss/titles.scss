@@ -43,3 +43,8 @@ h3 {
     font-size: 1.375rem;
   }
 }
+
+.titles {
+  max-width: min(742px, 100%);
+  margin: 0 auto 2rem;
+}

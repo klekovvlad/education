@@ -1,0 +1,186 @@
+@import "mixins";
+
+@mixin activeCard() {
+  padding: 0 2rem 2rem;
+  width: 410px;
+  height: auto;
+  min-height: 580px;
+  background-color: var(--main-white);
+  background-image: url("/src/img/teachers-bg.png");
+  background-position: top left;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include mobile {
+    min-height: 540px;
+  }
+
+  .teachers-item-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    color: var(--main-white);
+    background-color: var(--main-blue);
+    border-radius: 0 0 6px 6px;
+
+    .text.semi-bold {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    svg {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      color: var(--main-white);
+    }
+  }
+
+  .teachers-item-img {
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--main-blue);
+
+    @include mobile {
+      width: 158px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    margin: 1.5rem 0 0.75rem;
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  .teachers-item-data {
+    flex-grow: 1;
+
+    .button,
+    ul.students {
+      margin-top: auto;
+    }
+
+    ul {
+      margin-top: 1rem;
+      li {
+        padding: 6px 0.75rem;
+        background-color: #EFF5F8;
+        border-radius: 50px;
+        border: 1px solid var(--line-main-border);
+
+        @include mobile {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+.teachers {
+
+  @media (min-width: 468px) {
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .left {
+      left: -14%;
+
+      @include tablet {
+        left: -17%;
+      }
+
+      @media (max-width: 968px) {
+        left: -23%;
+      }
+    }
+
+    .right {
+      left: 14%;
+
+      @include tablet {
+        left: 17%;
+      }
+
+      @media (max-width: 968px) {
+        left: 23%;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    border-radius: 1.5rem;
+    border: 1px solid var(--line-main-border);
+
+    @include mobile {
+      @include activeCard;
+    }
+
+    &.active {
+      @include activeCard;
+    }
+
+    @media (min-width: 768px) {
+      &:not(.active) {
+        width: 71px;
+        height: 505px;
+        cursor: pointer;
+        background-color: #E3EBEF;
+
+        .teachers-item-info {
+          svg {
+            color: var(--main-blue);
+            font-size: 28px;
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        @include hover {
+          color: var(--main-white);
+          background-color: var(--main-blue);
+
+          svg {
+            color: var(--main-white);
+          }
+        }
+
+        .teachers-item-info {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          writing-mode: vertical-rl;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.5rem 0;
+
+          .text {
+            font-size: 22px;
+            scale: -1 -1;
+          }
+        }
+        .teachers-item-data {
+          display: none;
+        }
+      }
+    }
+  }
+}
+

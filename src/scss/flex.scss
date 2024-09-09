@@ -25,6 +25,14 @@
     gap: 0.75rem;
   }
 
+  &.gap-2xs {
+    gap: 6px;
+  }
+
+  &.gap-none {
+    gap: 0;
+  }
+
   &.wrap {
     flex-wrap: wrap;
   }
