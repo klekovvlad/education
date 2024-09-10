@@ -1,0 +1,12 @@
+@import "mixins";
+
+.card {
+  padding: 2rem;
+  border: 1px solid var(--line-main-border);
+  border-radius: 1.5rem;
+  background-color: var(--main-white);
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}

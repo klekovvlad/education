@@ -32,10 +32,18 @@ body {
   }
 }
 
-.container {
-  max-width: 1240px;
+.container,
+.container-wide {
   padding: 0 1.25rem;
   margin: 0 auto;
+}
+
+.container {
+  max-width: 1240px;
+}
+
+.container-wide {
+  max-width: 1360px;
 }
 
 .main {
