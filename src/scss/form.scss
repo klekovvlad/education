@@ -1,0 +1,77 @@
+@import "mixins";
+
+.form {
+  .form-wrapper {
+    color: var(--main-white);
+    padding: 60px 60px 0;
+    border-radius: 1.5rem;
+    background: linear-gradient(45deg, #4e73d3 0%, #3959ab 100%);
+    position: relative;
+
+    @media (max-width: 968px) {
+      flex-direction: column;
+      gap: 2rem;
+      padding-bottom: 60px;
+    }
+
+    @include mobile {
+      padding: 2rem 1.25rem;
+    }
+
+    form {
+      color: var(--main-black);
+
+      @include mobile {
+        button.max-content {
+          max-width: 100%;
+        }
+      }
+    }
+
+    img.parents,
+    img.students {
+      margin-top: auto;
+
+      @media (max-width: 968px) {
+        display: none;
+      }
+    }
+
+    img.parents {
+      max-width: 348px;
+      margin-left: auto;
+    }
+
+    .form-description {
+      position: absolute;
+      left: 60px;
+      bottom: 60px;
+      z-index: 2;
+
+      @media (max-width: 968px) {
+        position: relative;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    .form-content {
+      position: relative;
+      max-width: min(558px, 100%);
+
+      @media (max-width: 968px) {
+        max-width: 100%;
+      }
+    }
+
+    .card {
+      max-width: min(486px, 100%);
+      margin-bottom: 60px;
+
+      @media (max-width: 968px) {
+        max-width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

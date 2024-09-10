@@ -1,4 +1,9 @@
 .text {
+  a {
+    color: var(--main-blue);
+    text-decoration: underline;
+  }
+
   &.medium {
     font-weight: 500;
   }
@@ -21,6 +26,26 @@
 
   &.uppercase {
     text-transform: uppercase;
+  }
+
+  &.lines {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      translate: 0 100%;
+      background-image: url("/src/img/lines.svg");
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
   }
 }
 

@@ -17,6 +17,14 @@ h1, h2, h3 {
     }
   }
 
+  &.size-40 {
+    font-size: 40px;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+
   &.size-22 {
     font-size: 22px;
 

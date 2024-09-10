@@ -1,0 +1,47 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease;
+
+  .modal-body {
+    color: var(--main-black);
+    max-height: 580px;
+    opacity: 0;
+    translate: 0 50px;
+    transition: translate .3s linear, opacity .3s ease;
+    min-width: min(calc(100% - 40px), 422px) !important;
+    max-width: min(calc(100% - 40px), 638px) !important;
+    position: relative;
+
+    .modal-close-icon {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 28px;
+      aspect-ratio: 1;
+      background-image: url("/src/img/close.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+
+    .modal-body {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+}

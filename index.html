@@ -496,6 +496,76 @@
       </div>
     </section>
 
+    <section class="form container-wide">
+      <div class="form-wrapper flex align-start justify-space-between gap-xl">
+        <div class="form-content flex direction-column align-stretch">
+          <h2 class="text-align-left size-40">Начни подготовку в онлайн-школе <span class="text lines">ЕГЭ ПРОСТО</span> уже сегодня</h2>
+          <p>Оставь свои контакты и мы поможем с выбором предметов, графиком обучения и преподавателем</p>
+          <img class="students" src="/src/img/form-img-students.svg" alt="Начни подготовку в онлайн-школе ЕГЭ ПРОСТО уже сегодня">
+          <img class="parents" src="/src/img/form-img-parents.svg" alt="Начни подготовку в онлайн-школе ЕГЭ ПРОСТО уже сегодня">
+        </div>
+        <div class="card flex direction-column align-stretch gap-xl">
+          <form action="#" class="students flex direction-column align-stretch">
+            <div class="input">
+              <label for="name">Имя</label>
+              <input type="text" name="name" id="name">
+            </div>
+            <div class="input">
+              <label for="phone">Телефон</label>
+              <input type="tel" name="phone" id="phone">
+            </div>
+            <button type="submit" class="button button-default max-content">Отправить заявку</button>
+          </form>
+          <form action="#" class="parents flex direction-column align-stretch">
+            <div class="input">
+              <label for="parent-name">Имя и фамилия родителя</label>
+              <input type="text" name="name" id="parent-name">
+            </div>
+            <div class="input">
+              <label for="parent-phone">Телефон родителя</label>
+              <input type="tel" name="phone" id="parent-phone">
+            </div>
+            <div class="input">
+              <label for="parent-email">Электронная почта</label>
+              <input type="email" name="email" id="parent-email">
+            </div>
+            <div class="input">
+              <label for="type">Удобный способ обращения</label>
+              <input type="text" name="type" id="type">
+            </div>
+            <button type="submit" class="button button-default max-content">Отправить заявку</button>
+          </form>
+          <div class="modal modal-form">
+            <div class="modal-body card flex direction-column">
+              <img src="/src/img/form-submit.svg" alt="submit success" />
+              <h3>Спасибо, ваш запрос отправлен</h3>
+              <p>Какой-то текст в 1-2 предложения</p>
+              <button class="button button-default modal-close">На главную</button>
+            </div>
+          </div>
+
+<!--          УДАЛИТЬ, КОГДА БУДЕТЕ ИНТЕГРИРОВАТЬ ФОРМУ, ЭТОТ СКРИПТ ЛОВИТ СОБЫТИЕ SUBMIT И ОТКРЫВАЕТ МОДАЛКУ-->
+          <script>
+            const forms = document.querySelectorAll('form')
+            const modal = document.querySelector('.modal-form')
+            forms.forEach((form) => {
+              form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                modal.classList.add('open')
+              })
+            })
+          </script>
+
+          <p class="text secondary">Нажимая на кнопку, вы принимаете <a href="#">политику обработки данных</a> и <a
+              href="#">согласие на обработку персональных данных</a></p>
+        </div>
+        <div class="flex direction-column align-start gap-xs parents form-description">
+          <div class="text medium">Мы перезвоним с 8:00 до 22:00 по МСК</div>
+          <div class="text medium">Это бесплатно и займёт всего 10 минут</div>
+        </div>
+      </div>
+    </section>
+
     <section class="container faq" id="faq">
       <div class="titles">
         <h2>Часто задаваемые <span class="text blue">вопросы</span></h2>
