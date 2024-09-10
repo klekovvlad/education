@@ -1,3 +1,5 @@
+@import "mixins";
+
 .button {
   font-size: 1rem;
   font-family: inherit;
@@ -31,6 +33,12 @@
   border: 1px solid var(--button-secondary);
 }
 
+.button-dark {
+  color: var(--main-white);
+  background-color: #292E37;
+  border: 1px solid #292E37;
+}
+
 .button-circle {
   display: flex;
   align-items: center;
@@ -48,6 +56,39 @@
     aspect-ratio: 1;
     object-fit: contain;
   }
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: .5rem;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    use {
+      font-size: 22px;
+    }
+  }
+
+  @include hover {
+    color: var(--main-blue);
+  }
+}
+
+.button-icon-light {
+  color: var(--text-secondary);
+  background-color: var(--main-white);
+  border: 1px solid var(--line-main-border);
+}
+
+.button-icon-dark {
+  color: var(--main-white);
+  background-color: #292E37;
+  border: 1px solid #292E37;
 }
 
 .slider-buttons {

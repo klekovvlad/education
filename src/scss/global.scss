@@ -59,3 +59,11 @@ svg {
   aspect-ratio: 1;
   object-fit: contain;
 }
+
+.logo {
+  svg {
+    max-width: none;
+    width: 152px;
+    height: 30px;
+  }
+}

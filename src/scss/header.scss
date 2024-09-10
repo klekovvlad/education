@@ -105,4 +105,16 @@
       margin-left: auto;
     }
   }
+
+  .header-socials {
+    display: none;
+
+    @include mobile {
+      display: flex;
+
+      .button-icon-light {
+        background-color: var(--main-bg);
+      }
+    }
+  }
 }
