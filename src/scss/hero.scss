@@ -95,6 +95,12 @@
         rotate: 0deg;
       }
     }
+
+    @include hover {
+      span {
+        background-color: #415BA1;
+      }
+    }
   }
 
   .hero-socials {

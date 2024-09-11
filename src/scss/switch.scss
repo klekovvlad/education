@@ -1,3 +1,5 @@
+@import "mixins";
+
 .switch {
   max-width: max-content;
   background-color: var(--main-white);
@@ -43,5 +45,9 @@
 
   .button {
     width: 120px;
+
+    @include hover {
+      color: var(--main-black) !important;
+    }
   }
 }

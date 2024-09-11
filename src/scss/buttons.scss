@@ -10,6 +10,11 @@
   padding: 0 2.625rem;
   min-width: 106px;
   border-radius: .5rem;
+
+  &:disabled {
+    color: var(--text-secondary);
+    pointer-events: none;
+  }
 }
 
 .button-small {
@@ -25,21 +30,38 @@
   color: var(--main-white);
   background-color: var(--main-blue);
   border: 1px solid var(--main-blue);
+
+  @include hover {
+    background-color: #415BA1;
+  }
+
+  &:disabled {
+    background-color: var(--button-secondary);
+  }
 }
 
 .button-secondary {
   color: var(--main-black);
   background-color: var(--main-bg);
   border: 1px solid var(--button-secondary);
+
+  @include hover {
+    color: var(--main-blue);
+  }
 }
 
 .button-dark {
   color: var(--main-white);
   background-color: #292E37;
   border: 1px solid #292E37;
+
+  @include hover {
+    color: var(--main-blue);
+  }
 }
 
 .button-circle {
+  color: var(--main-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +70,11 @@
   background-color: var(--main-white);
   border: 1px solid var(--line-main-border);
   border-radius: 50%;
+
+  @include hover {
+    background-color: var(--main-blue);
+    color: var(--main-white);
+  }
 
   svg {
     width: 12px;
@@ -100,10 +127,6 @@
   justify-content: center;
   gap: 0.75rem;
   margin-top: 0.75rem;
-
-  .button-circle {
-    color: var(--main-black);
-  }
 
   .button-circle:first-child {
     transform: rotate(180deg);

@@ -10,6 +10,12 @@
     padding: 0;
   }
 
+  a, a:not(:has(button)) {
+    @include hover {
+      color: var(--main-blue);
+    }
+  }
+
   &-wrapper {
     background-color: var(--main-white);
     border-radius: var(--border-radius);
