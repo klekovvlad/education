@@ -1,7 +1,6 @@
 export const modalFunctions = () => {
   const modals = document.querySelectorAll('.modal');
   modals.forEach((modal) => {
-    const close = modal.querySelectorAll('.modal-close');
     const closeIcon = document.createElement('button');
     closeIcon.className = 'modal-close modal-close-icon';
     closeIcon.addEventListener('click', () => {
@@ -12,14 +11,10 @@ export const modalFunctions = () => {
     modal.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      if (e.target === modal) {
+      const target = e.target as HTMLDivElement;
+      if (target === modal || target.classList.contains('modal-close')) {
         modal.classList.remove('open');
       }
-    });
-    close.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        modal.classList.remove('open');
-      });
     });
   });
 };

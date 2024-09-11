@@ -22,6 +22,7 @@
     min-width: min(calc(100% - 40px), 422px) !important;
     max-width: min(calc(100% - 40px), 638px) !important;
     position: relative;
+    overflow: hidden;
 
     .modal-close-icon {
       position: absolute;

@@ -67,4 +67,9 @@ h3 {
 .titles {
   max-width: min(742px, 100%);
   margin: 0 auto 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }

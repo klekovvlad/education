@@ -109,3 +109,9 @@
     transform: rotate(180deg);
   }
 }
+
+.button-link {
+  font-size: inherit;
+  color: var(--main-blue);
+  font-weight: 600;
+}
