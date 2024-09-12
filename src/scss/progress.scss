@@ -45,8 +45,8 @@
       overflow: hidden;
       position: relative;
       margin-bottom: 1rem;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
+      //overscroll-behavior-x: contain;
+      //scroll-snap-type: x mandatory;
 
       @include noScrollbar;
     }
@@ -56,7 +56,7 @@
 
       @include mobile {
         flex-basis: 100%;
-        scroll-snap-align: start;
+        //scroll-snap-align: start;
       }
 
       &:nth-child(n+4) {
