@@ -1,0 +1,208 @@
+@import "mixins";
+
+.progress {
+  .slider-wrapper {
+    overflow: hidden;
+    max-width: min(52vw, 754px);
+    min-height: 500px;
+    margin: 0 auto;
+
+    @include mobile {
+      max-width: 100%;
+      min-height: auto;
+    }
+
+    .swiper {
+      height: 100%;
+    }
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+  }
+
+  .progress-wrapper {
+    position: relative;
+  }
+
+  .progress-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    @include mobile {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1rem;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+
+      @include noScrollbar;
+    }
+
+    .progress-controls-item {
+      flex: 0 0 calc(100% / 3);
+
+      @include mobile {
+        flex-basis: 100%;
+        scroll-snap-align: start;
+      }
+
+      &:nth-child(n+4) {
+        margin-left: auto;
+        text-align: left;
+
+        @include mobile {
+          justify-content: center;
+        }
+
+        .progress-controls-number {
+          margin-left: 0;
+        }
+
+        &.active {
+          .text {
+            &:before {
+              left: -30px;
+              translate: -100% -50%;
+              rotate: 180deg;
+            }
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      position: relative;
+    }
+  }
+
+  .progress-controls-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+    text-align: right;
+
+    @include mobile {
+      flex: 0 0 100%;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      justify-content: center;
+    }
+
+    .progress-controls-number {
+      flex-shrink: 0;
+      margin-left: auto;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      color: var(--main-blue);
+      background-color: var(--line-main-border);
+      transition: background-color .3s linear, color .3s linear;
+      position: relative;
+
+      @include mobile {
+        margin-left: 0;
+      }
+
+      .progress-circle {
+        position: absolute;
+        max-width: none;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: 2;
+        fill: none;
+        stroke: var(--main-blue);
+        stroke-width: 3px;
+        stroke-linecap: round;
+        stroke-dasharray: 295 295;
+        stroke-dashoffset: 295;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        rotate: -90deg;
+        transition: stroke-dashoffset 10s linear;
+      }
+    }
+
+    .text {
+      font-size: 20px;
+      max-width: 134px;
+
+      @include mobile {
+        font-size: 18px;
+        text-align: left;
+        max-width: none;
+      }
+    }
+
+    &.active {
+      .progress-controls-number {
+        color: var(--main-white);
+        background-color: var(--main-blue);
+      }
+
+      .text {
+        position: relative;
+
+        &:before {
+          content: '';
+          width: 30px;
+          aspect-ratio: 1;
+          position: absolute;
+          bottom: 4px;
+          right: -30px;
+          translate: 100% -50%;
+          background-image: url("/src/img/arrow-right.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          @include tablet {
+            display: none;
+          }
+        }
+      }
+
+      .progress-circle {
+        visibility: visible;
+        stroke-dashoffset: 0;
+        stroke: var(--main-white);
+      }
+    }
+  }
+
+  .progress-item {
+    border-radius: 0.75rem;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

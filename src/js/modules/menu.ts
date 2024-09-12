@@ -21,7 +21,10 @@ export const mobileMenu = () => {
 
     const links = menu.querySelectorAll('a');
     links.forEach((link) => {
-      link.addEventListener('click', toggleOpen);
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        TAGS.HTML?.classList.remove('hidden');
+      });
     });
   }
 };

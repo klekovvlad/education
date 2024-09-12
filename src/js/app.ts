@@ -6,6 +6,7 @@ import { modalFunctions } from './modules/modal.ts';
 import { maskFunction } from './modules/mask.ts';
 import { videoFunction } from './modules/video.ts';
 import { feedbackFunction } from './modules/feedback.ts';
+import { progressFunctions } from './modules/progress.ts';
 
 const app = () => {
   mobileMenu();
@@ -16,6 +17,7 @@ const app = () => {
   maskFunction();
   videoFunction();
   feedbackFunction();
+  progressFunctions();
 };
 
 window.addEventListener('DOMContentLoaded', app);

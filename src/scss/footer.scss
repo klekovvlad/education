@@ -4,6 +4,15 @@
   color: var(--main-white);
   background-color: #1A1C20;
 
+  li,
+  .footer-bottom {
+    a {
+      @include hover {
+        color: var(--main-blue);
+      }
+    }
+  }
+
   .footer-top {
     padding-top: 2rem;
     padding-bottom: 2.5rem;
@@ -11,14 +20,6 @@
 
     @include mobile {
       padding-bottom: 1.5rem;
-    }
-
-    li {
-      a {
-        @include hover {
-          color: var(--main-blue);
-        }
-      }
     }
 
     @include mobile {
