@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { compression } from 'vite-plugin-compression2';
 
 export default defineConfig({
   plugins: [
@@ -11,6 +12,7 @@ export default defineConfig({
         quality: 100,
       },
     }),
+    compression(),
   ],
   server: {
     open: true,
