@@ -4,13 +4,9 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 export default defineConfig({
   plugins: [
     ViteImageOptimizer({
+      test: /\.(jpe?g|png|gif|tiff|webp|avif)$/i,
       formats: ['webp'], // Укажите форматы, в которые нужно конвертировать
       extensions: ['png', 'jpg'], // Укажите форматы, которые нужно конвертировать
-      optimizers: {
-        webp: {
-          quality: 100,
-        },
-      },
       webp: {
         quality: 100,
       },
