@@ -2,6 +2,10 @@
 
 button {
   transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+
+  &:disabled {
+    cursor: not-allowed
+  }
 }
 
 a {
@@ -53,8 +57,10 @@ a {
   background-color: var(--main-bg);
   border: 1px solid var(--button-secondary);
 
-  @include hover {
-    color: var(--main-blue);
+  &:not(:disabled) {
+    @include hover {
+      color: var(--main-blue);
+    }
   }
 }
 
@@ -63,8 +69,10 @@ a {
   background-color: #292E37;
   border: 1px solid #292E37;
 
-  @include hover {
-    color: var(--main-blue);
+  &:not(:disabled) {
+    @include hover {
+      color: var(--main-blue);
+    }
   }
 }
 
@@ -79,9 +87,11 @@ a {
   border: 1px solid var(--line-main-border);
   border-radius: 50%;
 
-  @include hover {
-    background-color: var(--main-blue);
-    color: var(--main-white);
+  &:not(:disabled) {
+    @include hover {
+      background-color: var(--main-blue);
+      color: var(--main-white);
+    }
   }
 
   svg {
@@ -92,6 +102,12 @@ a {
 
     use {
       font-size: 12px;
+    }
+  }
+
+  &:disabled {
+    svg {
+      color: var(--text-secondary);
     }
   }
 }
@@ -112,8 +128,10 @@ a {
     }
   }
 
-  @include hover {
-    color: var(--main-blue);
+  &:not(:disabled) {
+    @include hover {
+      color: var(--main-blue);
+    }
   }
 }
 
@@ -145,4 +163,8 @@ a {
   font-size: inherit;
   color: var(--main-blue);
   font-weight: 600;
+
+  @include hover {
+    color: #415BA1;
+  }
 }

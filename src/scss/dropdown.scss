@@ -1,0 +1,78 @@
+@import "mixins";
+
+.dropdown {
+  position: relative;
+
+  &-right {
+    .dropdown-list {
+      right: 0;
+    }
+  }
+
+  &-left {
+    .dropdown-list {
+      left: 0;
+    }
+  }
+
+  &-button {
+    cursor: pointer;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+
+  &-list {
+    background-color: var(--main-white);
+    border: 1px solid var(--line-main-border);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -5px);
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+    min-width: 192px;
+    max-height: 254px;
+
+    transition: opacity .2s linear, transform .3s ease-in-out;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    border-radius: .5rem;
+
+    &-wrapper {
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding-right: 10px;
+      @include niceScrollbar;
+
+      & > * {
+        cursor: pointer;
+        text-wrap: nowrap;
+
+        @include hover {
+          color: var(--main-blue);
+        }
+      }
+    }
+  }
+
+  &.dropdown-open {
+    .dropdown-list {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0, 5px);
+    }
+  }
+}
+

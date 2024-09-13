@@ -7,6 +7,7 @@ import { maskFunction } from './modules/mask.ts';
 import { videoFunction } from './modules/video.ts';
 import { feedbackFunction } from './modules/feedback.ts';
 import { progressFunctions } from './modules/progress.ts';
+import { dropdownFunctions } from './modules/dropdown.ts';
 
 const app = () => {
   mobileMenu();
@@ -18,6 +19,7 @@ const app = () => {
   videoFunction();
   feedbackFunction();
   progressFunctions();
+  dropdownFunctions();
 };
 
 window.addEventListener('DOMContentLoaded', app);

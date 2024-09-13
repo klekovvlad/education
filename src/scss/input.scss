@@ -31,3 +31,28 @@
     }
   }
 }
+
+.select {
+  position: relative;
+
+  .input {
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background-image: url("/src/img/select.svg");
+      right: 1rem;
+      bottom: calc(52px / 2);
+      translate: 0 50%;
+      transition: rotate .3s linear;
+    }
+  }
+
+  &.dropdown-open {
+    .input:before {
+      rotate: -180deg
+    }
+  }
+}

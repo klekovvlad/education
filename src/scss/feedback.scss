@@ -1,18 +1,13 @@
 @import "mixins";
 
 .feedback {
-  .feedback-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.25rem;
 
-    @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .swiper-wrapper {
+    align-items: stretch;
+  }
 
-    @include mobile {
-      grid-template-columns: 1fr;
-    }
+  .feedback-column {
+    height: auto;
   }
 
   .feedback-column:has(.feedback-video) {

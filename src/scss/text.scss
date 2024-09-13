@@ -1,7 +1,13 @@
+@import "mixins";
+
 .text {
   a {
     color: var(--main-blue);
     text-decoration: underline;
+
+    @include hover {
+      color: #415BA1;
+    }
   }
 
   &.medium {
